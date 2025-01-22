@@ -218,7 +218,16 @@ char_arrays = process_srt_file(file_path)
 get_responses(system_info_wash_srt, char_arrays)
 
 # print(char_arrays)
-
+def save_to_markdown(content, filenames):
+    """
+    将输入字符保存为Markdown文件
+    :param content: 要保存的字符内容
+    :param filename: 保存的文件名，默认为output.md
+    """
+    with open(filenames, "w", encoding="utf-8") as file:
+        file.write(content)
+    print(f"文件已保存为 {filenames}")
+    
 chars = ""
 for i, char_array in enumerate(char_arrays):
     print(f"Chunk {i + 1}:\n{char_array}\n")
@@ -230,14 +239,5 @@ final_response=chat_completion_response(system_info_note,chars)
 
 filename=""+str(uuid.uuid4())+".md"
 
-def save_to_markdown(content, filenames):
-    """
-    将输入字符保存为Markdown文件
-    :param content: 要保存的字符内容
-    :param filename: 保存的文件名，默认为output.md
-    """
-    with open(filenames, "w", encoding="utf-8") as file:
-        file.write(content)
-    print(f"文件已保存为 {filenames}")
-    
-save_to_markdown(chars,filename)
+
+save_to_markdown(final_response,filename)
