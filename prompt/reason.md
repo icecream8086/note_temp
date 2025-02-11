@@ -103,8 +103,6 @@
 
 输出格式为Json，只需要输出Json即可，不需要其他内容，我需要评估掌握度
 
-参考这个评分，不要改json格式，分两个list，datetime留白
-
 标题为:
 
 exanple
@@ -115,4 +113,6 @@ exanple
         "datetime":""
 
     }
+
+参考这个评分，不要改json格式，分两个list，datetime留白,不得改变json结构,评分从严处理
 ```
